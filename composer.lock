@@ -9200,20 +9200,20 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "bizley/migration": 20,
-        "coderius/yii2-hit-counter": 20,
         "kartik-v/yii2-builder": 20,
-        "kartik-v/yii2-datecontrol": 20,
-        "kartik-v/yii2-editable": 20,
-        "kartik-v/yii2-editors": 20,
-        "kartik-v/yii2-grid": 20,
-        "kartik-v/yii2-mpdf": 20,
-        "kartik-v/yii2-popover-x": 20,
         "kartik-v/yii2-tabs-x": 20,
+        "kartik-v/yii2-popover-x": 20,
+        "kartik-v/yii2-mpdf": 20,
+        "kartik-v/yii2-editable": 20,
+        "kartik-v/yii2-grid": 20,
         "kartik-v/yii2-widgets": 20,
-        "nnnick/chartjs": 20,
+        "kartik-v/yii2-datecontrol": 20,
+        "kartik-v/yii2-editors": 20,
         "yiisoft/yii2-jui": 20,
-        "yiisoft/yii2-shell": 20
+        "coderius/yii2-hit-counter": 20,
+        "nnnick/chartjs": 20,
+        "yiisoft/yii2-shell": 20,
+        "bizley/migration": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
@@ -9222,6 +9222,6 @@
         "ext-json": "*",
         "ext-openssl": "*"
     },
-    "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
 }

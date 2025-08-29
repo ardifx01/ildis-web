@@ -15,7 +15,47 @@ ILDIS adalah aplikasi terbuka yang memungkinkan instansi pemerintah pusat maupun
 
 > ⚠️ Kami sedang dalam proses menyesuaikan ILDIS agar bisa menggunakan dependensi terbaru tanpa breaking compatibility. Kontribusi untuk refactor dan modernisasi sangat dibutuhkan.
 
+## Persyaratan Teknis
+- PHP versi 7 atau terbaru
+- MySQL Database atau yang mendukung (MariaDB)
+- Apache2 sebagai web server
 
+## Pengembangan
+
+### Menggunakan Docker & VSCode
+1. Buka repositori ini dengan VSCode kemudian pilih menu `Open in container...`
+2. Jalankan program `init` atau `init.bat` (jika menggunakan _Windows_). Pilih opsi yang sesuai hingga selesai.
+3. Pasang _dependency_ menggunakan `composer` dengan menjalankan perintah
+   ```console
+   composer update --ignore-platform-reqs
+   ```
+4. Salin contoh pengaturan `.env.example`, kemudian isikan pengaturan seperti berikut:
+   ```
+   # Environment configuration file for the application.
+   YII_ENV=prod
+   YII_DEBUG=false
+
+   #  Database configuration
+   DB_HOST=db # Pengaturan sesuai docker compose
+   DB_USER=mariadb # Pengaturan sesuai docker compose
+   DB_PASSWORD=mariadb # Pengaturan sesuai docker compose
+   DB_DATABASE=mariadb # Pengaturan sesuai docker compose
+   DB_DATABASE_PORT=3306
+   PUBLIC_DOMAIN=http://ildis-frontend.test
+
+   #  Cookie validation keys for different environments
+   COOKIE_VALIDATION_KEY_BE=<Isikan kunci rahasia yang susah ditebak>
+   COOKIE_VALIDATION_KEY_FE=<Isikan kunci rahasia yang susah ditebak>
+
+   # reCAPTCHA configuration
+   RECAPTCHA_SITE_KEY=
+   RECAPTCHA_SECRET_KEY=
+   ```
+5. Isi database dengan `sql` yang disediakan, ketika ditanya password, isikan dengan `mariadb` sesuai dengan konfigurasi docker-compose
+   ```
+   mysql -h db -u mariadb -p mariadb < DATABASE/ildis_v4.sql
+   ```
+6. Jalankan _Debugger_ menu dan pilih `Launch Built-in web server` dan lanjutkan pengembangan.
 
 ## 📝 TODO
 
